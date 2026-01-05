@@ -1,0 +1,17 @@
+import { useContext } from 'react';
+import { Navigate } from "react-router-dom";
+import Layout from "../components/Layout";
+import { PostListProvider } from "../providers/PostListProvider"; 
+import { UserContext } from "../providers/UserProvider";
+
+export default function Main() {
+
+  const { userInfo } = useContext(UserContext);
+  const loggedIn = (userInfo.token !== '');
+
+    return(
+      <PostListProvider>
+        {loggedIn ? <Layout />:<Navigate replace to="/" />}
+      </PostListProvider>
+    )
+}
