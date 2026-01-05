@@ -13,7 +13,8 @@ export default function SignIn() {
   
   //ログインボタンの処理
   const onSignInClick = async() => {
-    //サインイン処理をして結果を取得
+
+      //サインイン処理をして結果を取得
     const res = await sign_in(userName, pass);
     //認証結果ごとの処理
     if(!res){
