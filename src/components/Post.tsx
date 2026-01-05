@@ -60,14 +60,14 @@ export default function Post(props: any) {
         )}
       </div>
       {edit ? (
-        <>
+        <SEditArea>
           <SSideBarTextArea
             rows={4}
             value={msg}
             onChange={(evt) => setMsg(evt.target.value)}
             ></SSideBarTextArea>
-          <SedFnBtn onClick={ediFnBtn}>編集完了</SedFnBtn>
-        </>
+          <SEdfinBtn onClick={ediFnBtn}>編集完了</SEdfinBtn>
+        </SEditArea>
       ) : (
         <div>{getLines(post.content)}</div>
       )}
@@ -101,16 +101,27 @@ const Sbtn = styled.button`
   border: none;
   cursor: pointer;
 `
+
+const SEditArea = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20rem;
+`
+
 const SSideBarTextArea = styled.textarea`
   margin-top: .6rem;
   border-radius: 4px;
+  width: 100%;
   box-shadow: inset 0 2px 4px #CCCCCC;
 `
 
-const SedFnBtn = styled.button`
-  margin-left: 8px;
+const SEdfinBtn = styled.button`
+  margin: 6px 0;
   font-size: .7rem;
   background-color: none;
   color: #000044;
-  border: none;
+  border: .5px solid #000044;
+  width: 10rem;
+  cursor: pointer;
 `
