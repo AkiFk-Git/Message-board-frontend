@@ -22,7 +22,7 @@ export default function Layout() {
 
 const SHeader = styled.div`
   width: 100%;
-  height: 32px;
+  height: 34px;
   box-shadow: 0px 4px 4px #AAAAAA;
 `;
 

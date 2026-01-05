@@ -15,22 +15,30 @@ export default function Header() {
     navigate("/");
   };
 
-  //表示するユーザー情報の取得
-  useEffect(() => {
-    const myGetUser = async () => {
-      const user = await getUser(userInfo.user_uuid, userInfo.token);
-      setUserName(user.name);
-    };
-    myGetUser();
-  }, []);
+    //表示するユーザー情報の取得
+    useEffect(() => {
+      //サインイン・サインアップ画面時は何もしない
+      if (!userInfo.token) {
+          return; 
+        }
+      const myGetUser = async () => {
+        const user = await getUser(userInfo.user_uuid, userInfo.token);
+        setUserName(user.name);
+      };
+      myGetUser();
+    }, []);
 
   return (
     <SHeader>
       <SLogo>MicroPost</SLogo>
+      {userInfo.token ? (
       <SRightItem>
         <SName>{userName}</SName>
         <SLogout onClick={logout}>ログアウト</SLogout>
       </SRightItem>
+      ) : (
+        <></>
+      )}
     </SHeader>
   );
 }
