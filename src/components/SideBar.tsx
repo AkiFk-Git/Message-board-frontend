@@ -92,6 +92,7 @@ const SSideBarRow = styled.div`
   text-align: center;
 `
 const SSideBarTextArea = styled.textarea`
+  width: 70%;
   border-radius: 4px;
   box-shadow: inset 0 2px 4px #CCCCCC;
 `
@@ -101,6 +102,6 @@ const SSideBarButton = styled.button`
   padding: 4px;
   border-radius: 8px;
   color: #FAFAFA;
-  width: 100%;
+  width: 70%;
   cursor: pointer;
 `
