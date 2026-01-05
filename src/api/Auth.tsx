@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { SignInResponse, SignUpResponse } from '../types/Types';
+import { SignInResponse} from '../types/Types';
 
 //サインインのAPI
 export const sign_in = async (user_name: string, pass: string): Promise<SignInResponse> => {
