@@ -28,10 +28,10 @@ export type PostType = {
 };
 
 // Post.tsx/Post関数のプロップスの型
-export type PostProp = {
+export type PostProps = {
   token: string;
   key: number;
-  post: any;
+  post: PostType;
   userUuid: string;
   delPost: (userUuid:string,token:string,postId:number) => void;
   editPost: (token:string, userUuid:string, postId:number, msg:string) => void;

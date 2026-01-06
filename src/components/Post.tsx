@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { ReactNode } from 'react';
 import styled from "styled-components";
+import { PostProps } from '../types/Types';
 
-export default function Post(props: any) {
+export default function Post(props: PostProps) {
   const { token, post, userUuid, delPost, editPost } = props;
   
   //ポストの形を作る
