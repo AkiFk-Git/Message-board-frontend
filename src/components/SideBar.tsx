@@ -28,7 +28,7 @@ export default function SideBar() {
     const posts = await getList(userInfo.token);
     let postList: Array<PostType> = [];
     if (posts) {
-      posts.forEach((p: any) => {
+      posts.forEach((p: PostType) => {
         postList.push({
           id: p.id,
           userUuid: p.userUuid,
