@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import { signIn } from '../api/Auth'; 
 import { UserContext } from "../providers/UserProvider";
+import { SLoginButton, SSignInFrame, SSignInInput, SSignInLabel, SSignInRow, SToSignUp } from '../styles/SigninForm';
 
 export default function SignInForm() {
   const navigate = useNavigate(); 
@@ -77,47 +78,3 @@ export default function SignInForm() {
     </SSignInFrame>
   );
 }
-
-
-const SSignInFrame = styled.div`
-  background-color: #f8f8f8;
-  margin: 80px;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  border-radius: 8px;
-  box-shadow: 0 8px 8px #aaaaaa;
-`;
-
-const SSignInRow = styled.div`
-  dixplay: inline-block;
-  margin-top: 4px;
-  margin-bottom: 4px;
-`;
-
-const SSignInLabel = styled.span`
-  display: inline-block;
-  width: 25%;
-  vertical-align: top;
-  text-align: right;
-  margin-right: 4px;
-`;
-
-const SSignInInput = styled.span`
-  display: inline-block;
-  width: auto;
-  vertical-align: top;
-  margin-left: 4px;
-`;
-const SLoginButton = styled.button`
-  background-color: #444444;
-  color: #f0f0f0;
-  padding: 4px 16px;
-  border-radius: 8px;
-`;
-
-const SToSignUp = styled.a`
-  color: #242323ff;
-  font-size: .8rem;
-  cursor: pointer;
-  text-decoration:underline;
-`

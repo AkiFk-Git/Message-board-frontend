@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { ReactNode } from 'react';
-import styled from "styled-components";
 import { PostProps } from '../types/Types';
+import { Sbtn, SDate, SEdfinBtn, SEditArea, SPost, SSideBarTextArea } from '../styles/Post';
+import { SName } from '../styles/Header';
 
 export default function Post(props: PostProps) {
   const { token, post, userUuid, delPost, editPost } = props;
@@ -75,54 +76,3 @@ export default function Post(props: PostProps) {
     </SPost>
   )
 }
-
-const SPost = styled.div`
-  margin: 8px 0px;
-  border-bottom: 1px solid #AAAAAA;
-  text-align: left;
-  padding-left: 8px;
-`
-
-const SName = styled.span`
-  font-size: small;
-  color: #000044;
-`
-
-const SDate = styled.span`
-  margin-left: 8px;
-  font-size: small;
-  color: #000044;
-`
-
-const Sbtn = styled.button`
-  margin-left: 8px;
-  font-size: .7rem;
-  background-color: none;
-  color: #000044;
-  border: none;
-  cursor: pointer;
-`
-
-const SEditArea = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 20rem;
-`
-
-const SSideBarTextArea = styled.textarea`
-  margin-top: .6rem;
-  border-radius: 4px;
-  width: 100%;
-  box-shadow: inset 0 2px 4px #CCCCCC;
-`
-
-const SEdfinBtn = styled.button`
-  margin: 6px 0;
-  font-size: .7rem;
-  background-color: none;
-  color: #000044;
-  border: .5px solid #000044;
-  width: 10rem;
-  cursor: pointer;
-`

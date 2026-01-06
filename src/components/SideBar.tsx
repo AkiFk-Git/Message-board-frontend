@@ -1,10 +1,12 @@
 import { useState, useContext, useEffect } from "react";
-import styled from "styled-components";
 import { UserContext } from "../providers/UserProvider";
 import { PostListContext } from "../providers/PostListProvider";
 import { post, getList } from "../api/Post";
 import { getUser } from "../api/User";
 import { PostType } from "../types/Types";
+import { SSideBar } from "../styles/MainLayout";
+import { SSideBarButton, SSideBarRow, SUmail, SUname, SUserInfo } from "../styles/SideBar";
+import { SSideBarTextArea } from "../styles/Post";
 
 export default function SideBar() {
   const [ userName, setUserName ] = useState("");
@@ -63,41 +65,3 @@ export default function SideBar() {
   );
 }
 
-const SSideBar = styled.div`
-  padding: 8px;
-`
-const SUserInfo = styled.div`
-  margin-top: 12px;
-  padding-left: 1rem;
-  text-align: left;
-  display: flex;
-  align-items: center;
-`
-
-const SUname = styled.div`
-  color: #222222;
-`
-const SUmail = styled.div`
-  color: #222222;
-  font-size: .8rem;
-`
-
-const SSideBarRow = styled.div`
-  margin-top: 2px;
-  margin: 30px 0 4px 0;
-  text-align: center;
-`
-const SSideBarTextArea = styled.textarea`
-  width: 70%;
-  border-radius: 4px;
-  box-shadow: inset 0 2px 4px #CCCCCC;
-`
-
-const SSideBarButton = styled.button`
-  background-color: #222222;
-  padding: 4px;
-  border-radius: 8px;
-  color: #FAFAFA;
-  width: 70%;
-  cursor: pointer;
-`

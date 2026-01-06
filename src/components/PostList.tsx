@@ -1,11 +1,11 @@
 import { useContext, useEffect } from "react";
-import styled from "styled-components";
 
 import Post from './Post';
 import { PostListContext } from "../providers/PostListProvider";
 import { UserContext } from "../providers/UserProvider";
 import { del, edit, getList } from "../api/Post";
 import { PostType } from "../types/Types";
+import { SPostList } from "../styles/PostList";
 
 export default function PostList() {
 	const { postList, setPostList } = useContext(PostListContext);
@@ -55,9 +55,3 @@ export default function PostList() {
 			</SPostList>
 	)
 }
-
-const SPostList = styled.div`
-  margin-top: 16px;
-  height: 100%;
-  overflow-y: scroll;
-`;
