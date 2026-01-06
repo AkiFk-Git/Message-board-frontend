@@ -2,9 +2,10 @@ import { useContext, useEffect } from "react";
 import styled from "styled-components";
 
 import Post from './Post';
-import { PostListContext, PostType } from "../providers/PostListProvider";
+import { PostListContext } from "../providers/PostListProvider";
 import { UserContext } from "../providers/UserProvider";
 import { del, edit, getList } from "../api/Post";
+import { PostType } from "../types/Types";
 
 export default function PostList() {
 	const { postList, setPostList } = useContext(PostListContext);
@@ -15,7 +16,7 @@ export default function PostList() {
 		const posts = await getList(userInfo.token);
 		let postList: Array<PostType> = [];
 		if (posts) {
-			posts.forEach((p: any) => {
+			posts.forEach((p: PostType) => {
 			postList.push({
 				id: p.id,
 				userUuid: p.userUuid,
@@ -50,7 +51,8 @@ export default function PostList() {
 				{postList.map((p) => (
 					<Post 
 					token={userInfo.token} 
-					key={p.id} post={p} 
+					key={p.id}
+					post={p} 
 					userUuid={userInfo.userUuid} 
 					delPost={delPost} 
 					editPost={editPost}/>

@@ -1,9 +1,10 @@
 import { useState, useContext, useEffect } from "react";
 import styled from "styled-components";
 import { UserContext } from "../providers/UserProvider";
-import { PostListContext, PostType } from "../providers/PostListProvider";
+import { PostListContext } from "../providers/PostListProvider";
 import { post, getList } from "../api/Post";
 import { getUser } from "../api/User";
+import { PostType } from "../types/Types";
 
 export default function SideBar() {
   const [ userName, setUserName ] = useState("");

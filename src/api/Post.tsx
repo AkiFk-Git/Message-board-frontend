@@ -1,10 +1,12 @@
 import axios from "axios";
+import { promises } from "dns";
+import { PostType } from "../types/Types";
 
 //送信先を定義
 const apiBaseUrl = process.env.REACT_APP_API_URL;
 
 //一覧を取得するAPI
-export const getList = async (token: string) => {
+export const getList = async (token: string): Promise<Array<PostType>> => {
   const url = `${apiBaseUrl}/post?token=${token}&records=10`;
   const res = await axios.get(url);
   return res.data

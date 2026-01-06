@@ -1,4 +1,4 @@
-//　サーバーからの応答の型を定義
+//　サーバーからの応答の型
 //　サインイン
 export type SignInResponse = {
   inp: boolean,
@@ -11,5 +11,24 @@ export type SignUpResponse = {
   inp: boolean;
   nameDup: boolean;
   mailDup: boolean;
+}
+
+// ポストの型を定義
+export type PostType = {
+  id: number;
+  userUuid: string;
+  userName: string;
+  content: string;
+  createdAt: Date;
+};
+
+// Post.tsx/Post関数のプロップスの型
+export type PostProp = {
+  token: string;
+  key: number;
+  post: any;
+  userUuid: string;
+  delPost: (userUuid:string,token:string,postId:number) => void;
+  editPost: (token:string, userUuid:string, postId:number, msg:string) => void;
 }
 

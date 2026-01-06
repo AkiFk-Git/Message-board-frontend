@@ -1,13 +1,5 @@
 import { useState, createContext, Dispatch, SetStateAction, ReactNode } from "react";
-
-// ポストを保持する型を定義
-export type PostType = {
-  id: number;
-  userUuid: string;
-  userName: string;
-  content: string;
-  createdAt: Date;
-};
+import { PostType } from "../types/Types";
 
 // PoviderのPropsを型定義
 interface UserProviderProps {
