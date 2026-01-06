@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from "styled-components";
 
-import { sign_up } from '../api/User';
+import { signUp } from '../api/User';
 
 export const SignUp = () => {
     const navigate = useNavigate(); 
@@ -12,7 +12,7 @@ export const SignUp = () => {
     //アカウント作成ボタンの処理
     const onSignUpClick = async() => {
       //アカウント作成をして結果を取得
-      const res = await sign_up(userName, pass, mail);
+      const res = await signUp(userName, pass, mail);
       //登録結果ごとにアナウンス
       if(res.inp && res.nameDup && res.mailDup){
           alert("アカウントが作成されました")

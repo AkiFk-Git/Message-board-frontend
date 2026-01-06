@@ -12,7 +12,7 @@ const getUser = async (user_uuid: string, token: string) => {
 };
 
 //サインアップのAPI
-export const sign_up = async (user_name: string, pass: string, mail: string): Promise<SignUpResponse> => {
+export const signUp = async (user_name: string, pass: string, mail: string): Promise<SignUpResponse> => {
   const url = `${apiBaseUrl}/user?user_name=${user_name}&password=${pass}&mail=${mail}`;
   const res = await axios.post(url);
   return res.data
