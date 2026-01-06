@@ -25,7 +25,7 @@ export const edit = async (token:string, userUuid:string, postId:number, msg:str
       message: msg
     };
   const url = `${apiBaseUrl}/post?userUuid=${userUuid}&token=${token}&postId=${postId}`;
-  await axios.put(url,data)
+  return await axios.put(url,data)
 }
 
 //選択ポストを削除するAPI
