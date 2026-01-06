@@ -12,6 +12,11 @@ export type SignUpResponse = {
   nameDup: boolean;
   mailDup: boolean;
 }
+//ユーザー情報取得
+export type getUserResponse = {
+  name: string;
+  umail: string; 
+}
 
 // ポストの型を定義
 export type PostType = {

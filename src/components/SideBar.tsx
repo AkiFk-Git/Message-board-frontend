@@ -15,7 +15,7 @@ export default function SideBar() {
 
   //ユーザー情報の取得
   useEffect(() => {
-    const myGetUser = async () => {
+    const myGetUser = async() => {
       const user = await getUser(userInfo.userUuid, userInfo.token);
       setUserName(user.name);
       setUserMail(user.umail);

@@ -15,18 +15,19 @@ export default function Header() {
     navigate("/");
   };
 
-    //表示するユーザー情報の取得
-    useEffect(() => {
-      //サインイン・サインアップ画面時は何もしない
-      if (!userInfo.token) {
-          return; 
-        }
-      const myGetUser = async () => {
-        const user = await getUser(userInfo.userUuid, userInfo.token);
-        setUserName(user.name);
-      };
-      myGetUser();
-    }, []);
+  //表示するユーザー情報の取得
+  useEffect(() => {
+    //サインイン・サインアップ画面時は何もしない
+    if (!userInfo.token) {
+        return; 
+    }
+
+    const myGetUser = async() => {
+      const user = await getUser(userInfo.userUuid, userInfo.token);
+      setUserName(user.name);
+    };
+    myGetUser();
+  }, [userInfo.token, userInfo.userUuid]);
 
   return (
     <SHeader>
