@@ -15,7 +15,7 @@ export default function SideBar() {
   //ユーザー情報の取得
   useEffect(() => {
     const myGetUser = async () => {
-      const user = await getUser(userInfo.user_uuid, userInfo.token);
+      const user = await getUser(userInfo.userUuid, userInfo.token);
       setUserName(user.name);
       setUserMail(user.umail);
     };
@@ -30,10 +30,10 @@ export default function SideBar() {
       posts.forEach((p: any) => {
         postList.push({
           id: p.id,
-          user_uuid: p.user_uuid,
-          user_name: p.user_name,
+          userUuid: p.userUuid,
+          userName: p.userName,
           content: p.content,
-          created_at: new Date(p.created_at),
+          createdAt: new Date(p.createdAt),
         });
       });
     }
@@ -42,7 +42,7 @@ export default function SideBar() {
 
   //送信ボタンの関数
   const onSendClick = async() => {
-  	await post(userInfo.user_uuid, userInfo.token, msg);
+  	await post(userInfo.userUuid, userInfo.token, msg);
 	  await getPostList();
     setMsg("")
   };

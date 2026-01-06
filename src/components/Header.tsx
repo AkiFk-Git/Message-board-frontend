@@ -11,7 +11,7 @@ export default function Header() {
 
   //ログアウトの関数
   const logout = () => {
-    setUserInfo({ user_uuid: "", token: "" });
+    setUserInfo({ userUuid: "", token: "" });
     navigate("/");
   };
 
@@ -22,7 +22,7 @@ export default function Header() {
           return; 
         }
       const myGetUser = async () => {
-        const user = await getUser(userInfo.user_uuid, userInfo.token);
+        const user = await getUser(userInfo.userUuid, userInfo.token);
         setUserName(user.name);
       };
       myGetUser();

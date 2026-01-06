@@ -3,16 +3,16 @@ import { ReactNode } from 'react';
 import styled from "styled-components";
 
 export default function Post(props: any) {
-  const { token, post, user_uuid, delPost, editPost } = props;
+  const { token, post, userUuid, delPost, editPost } = props;
   
   //ポストの形を作る
   const getDateStr = () => {
-    const year = post.created_at.getFullYear();
-    const month = post.created_at.getMonth() + 1;
-    const date = post.created_at.getDate();
-    const hour = post.created_at.getHours();
-    const min = post.created_at.getMinutes();
-    const sec = post.created_at.getSeconds();
+    const year = post.createdAt.getFullYear();
+    const month = post.createdAt.getMonth() + 1;
+    const date = post.createdAt.getDate();
+    const hour = post.createdAt.getHours();
+    const min = post.createdAt.getMinutes();
+    const sec = post.createdAt.getSeconds();
     return `${year}年${month}月${date}日 ${hour}時${min}分${sec}秒`;
   };
   const getLines = (src: string):ReactNode => {
@@ -39,20 +39,20 @@ export default function Post(props: any) {
   //編集完了ボタンの関数
   const ediFnBtn = async() => {
     setEdit(false);
-    editPost(token,user_uuid,post.id,msg)
+    editPost(token,userUuid,post.id,msg)
   }
   //削除ボタンの関数
   const delButton = async() => {
-    delPost(user_uuid,token,post.id);
+    delPost(userUuid,token,post.id);
   }
 
   //ユーザーのuuidが一致していたら削除、編集ボタンを表示
   return(
     <SPost>
       <div>
-        <SName>{post.user_name}</SName>
+        <SName>{post.userName}</SName>
         <SDate>{getDateStr()}</SDate>
-        {user_uuid === post.user_uuid&& !edit && (
+        {userUuid === post.userUuid&& !edit && (
           <>
           <Sbtn onClick={ediStBtn}>編集</Sbtn>
           <Sbtn onClick={delButton}>削除</Sbtn>

@@ -3,10 +3,10 @@ import { useState, createContext, Dispatch, SetStateAction } from "react";
 // ポストを保持する型を定義
 export type PostType = {
   id: number;
-  user_uuid: string;
-  user_name: string;
+  userUuid: string;
+  userName: string;
   content: string;
-  created_at: Date;
+  createdAt: Date;
 };
 //　PostListContextの定義
 export const PostListContext = createContext(

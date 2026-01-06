@@ -2,7 +2,7 @@ import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import styled from "styled-components";
 
-import { sign_in } from '../api/Auth'; 
+import { signIn } from '../api/Auth'; 
 import { UserContext } from "../providers/UserProvider";
 
 export default function SignIn() {
@@ -15,7 +15,7 @@ export default function SignIn() {
   const onSignInClick = async() => {
 
       //サインイン処理をして結果を取得
-    const res = await sign_in(userName, pass);
+    const res = await signIn(userName, pass);
     //認証結果ごとの処理
     if(!res){
       alert("認証に失敗しました")
@@ -26,7 +26,7 @@ export default function SignIn() {
     }else if(res.token&&res.user_uuid) {
       navigate("/main");
       setUserInfo({
-        user_uuid: res.user_uuid,
+        userUuid: res.user_uuid,
         token: res.token,
       });
     }else {

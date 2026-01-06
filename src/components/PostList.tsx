@@ -18,10 +18,10 @@ export default function PostList() {
 			posts.forEach((p: any) => {
 			postList.push({
 				id: p.id,
-				user_uuid: p.user_uuid,
-				user_name: p.user_name,
+				userUuid: p.userUuid,
+				userName: p.userName,
 				content: p.content,
-				created_at: new Date(p.created_at),
+				createdAt: new Date(p.createdAt),
 			});
 		});
 		}
@@ -29,14 +29,14 @@ export default function PostList() {
 	}
 
 	//ポストを編集する関数
-	const editPost = async(token:string, user_uuid:string, post_id:number, msg:string) =>{
-		const res = await edit(token, user_uuid, post_id, msg);
+	const editPost = async(token:string, userUuid:string, postId:number, msg:string) =>{
+		const res = await edit(token, userUuid, postId, msg);
 		getPostList()
 	}
 
 	//ポストを削除する関数
-	const delPost = async(user_uuid:string,token:string,post_id:number) => {
-		await del(user_uuid,token,post_id);
+	const delPost = async(userUuid:string,token:string,postId:number) => {
+		await del(userUuid,token,postId);
 		getPostList()
 	} 
 
@@ -51,7 +51,7 @@ export default function PostList() {
 					<Post 
 					token={userInfo.token} 
 					key={p.id} post={p} 
-					user_uuid={userInfo.user_uuid} 
+					userUuid={userInfo.userUuid} 
 					delPost={delPost} 
 					editPost={editPost}/>
 				))}
