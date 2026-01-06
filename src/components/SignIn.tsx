@@ -23,10 +23,10 @@ export default function SignIn() {
       alert("正しく入力されていません")
     }else if(res.user){
       alert("ユーザー名またはパスワードに誤りがあります")
-    }else if(res.token&&res.user_uuid) {
+    }else if(res.token&&res.userUuid) {
       navigate("/main");
       setUserInfo({
-        userUuid: res.user_uuid,
+        userUuid: res.userUuid,
         token: res.token,
       });
     }else {

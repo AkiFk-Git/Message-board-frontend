@@ -3,7 +3,7 @@
 export type SignInResponse = {
   inp: boolean,
   user: boolean,
-  user_uuid: string; 
+  userUuid: string; 
   token: string;
 };
 //　サインアップ
