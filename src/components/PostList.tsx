@@ -14,18 +14,13 @@ export default function PostList() {
 	// ポスト一覧を取得する関数
 	const getPostList = async() => {
 		const posts = await getList(userInfo.token);
-		let postList: Array<PostType> = [];
-		if (posts) {
-			posts.forEach((p: PostType) => {
-			postList.push({
+		const postList: Array<PostType> = posts ? posts.map((p: PostType) => ({
 				id: p.id,
 				userUuid: p.userUuid,
 				userName: p.userName,
 				content: p.content,
 				createdAt: new Date(p.createdAt),
-			});
-		});
-		}
+		})):[]
 	setPostList(postList);
 	}
 
