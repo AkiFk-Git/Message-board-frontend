@@ -16,12 +16,6 @@ export default function MainLayout() {
 	)
 }
 
-const SHeader = styled.div`
-  width: 100%;
-  height: 34px;
-  box-shadow: 0px 4px 4px #AAAAAA;
-`;
-
 const SBody = styled.div`
   width: 100%;
   height: calc(100vh - 32px);
