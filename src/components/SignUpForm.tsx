@@ -80,5 +80,6 @@ export const SignUpForm = () => {
       <SToSignIn onClick={onSignInClick}>
         ログインはこちら
       </SToSignIn>
-     </SSignUpFrame>)
+     </SSignUpFrame>
+    )
 }

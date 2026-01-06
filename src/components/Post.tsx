@@ -1,21 +1,18 @@
 import React, { useState } from 'react';
 import { ReactNode } from 'react';
+import dayjs from 'dayjs';
+
 import { PostProps } from '../types/Types';
 import { Sbtn, SDate, SEdfinBtn, SEditArea, SPost, SSideBarTextArea } from '../styles/Post';
 import { SName } from '../styles/Header';
+
 
 export default function Post(props: PostProps) {
   const { token, post, userUuid, delPost, editPost } = props;
   
   //ポストの形を作る
   const getDateStr = () => {
-    const year = post.createdAt.getFullYear();
-    const month = post.createdAt.getMonth() + 1;
-    const date = post.createdAt.getDate();
-    const hour = post.createdAt.getHours();
-    const min = post.createdAt.getMinutes();
-    const sec = post.createdAt.getSeconds();
-    return `${year}年${month}月${date}日 ${hour}時${min}分${sec}秒`;
+    return dayjs(post.createdAt).format('YYYY年M月D日 H時m分s秒');
   };
   const getLines = (src: string):ReactNode => {
     return src.split('\n').map((line, index) => {
