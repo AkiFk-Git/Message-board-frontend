@@ -16,10 +16,6 @@ export default function PostList() {
 		let postList: Array<PostType> = [];
 		if (posts) {
 			posts.forEach((p: any) => {
-
-			//test
-			alert(`id:${p.id},uuid:${p.uuid},user:${p.userName},content:${p.content},createdAt:${p.createdAt}`)
-
 			postList.push({
 				id: p.id,
 				userUuid: p.userUuid,
