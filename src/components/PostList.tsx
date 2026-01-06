@@ -16,6 +16,10 @@ export default function PostList() {
 		let postList: Array<PostType> = [];
 		if (posts) {
 			posts.forEach((p: any) => {
+
+			//test
+			alert(`id:${p.id},uuid:${p.uuid},user:${p.userName},content:${p.content},createdAt:${p.createdAt}`)
+
 			postList.push({
 				id: p.id,
 				userUuid: p.userUuid,
@@ -30,7 +34,7 @@ export default function PostList() {
 
 	//ポストを編集する関数
 	const editPost = async(token:string, userUuid:string, postId:number, msg:string) =>{
-		const res = await edit(token, userUuid, postId, msg);
+		await edit(token, userUuid, postId, msg);
 		getPostList()
 	}
 
