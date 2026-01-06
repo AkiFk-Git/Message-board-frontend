@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 import SideBar from './SideBar';
-import Contents from './Contents';
+import PostList from './PostList';
 export default function MainLayout() {
 	return (
 		<>
 			<SBody>
 				<SSideBar>
-					<SideBar></SideBar>
+					<SideBar />
 				</SSideBar>
 				<SContents>
-					<Contents></Contents>
+					<PostList />
 				</SContents>
 			</SBody>
 		</>
