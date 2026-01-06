@@ -1,5 +1,5 @@
-import SignUpLayout from "../components/SignUplayout";
+import { SignUpForm } from "../components/SignUpForm";
 
 export default function SignUp () {
-    return <SignUpLayout />
+    return <SignUpForm />
 }
