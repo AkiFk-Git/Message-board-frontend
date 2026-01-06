@@ -1,5 +1,4 @@
 import axios from "axios";
-import { promises } from "dns";
 import { PostType } from "../types/Types";
 
 //送信先を定義
@@ -13,7 +12,7 @@ export const getList = async (token: string): Promise<Array<PostType>> => {
 };
 
 //ポスト投稿をするAPI
-export const post = async (userUuid: string, token: string, msg: string) => {
+export const post = async (userUuid: string, token: string, msg: string): Promise<void> => {
   const data = {
     message: msg
   };
@@ -22,7 +21,7 @@ export const post = async (userUuid: string, token: string, msg: string) => {
 }
 
 //選択ポストの編集をするAPI
-export const edit = async (token:string, userUuid:string, postId:number, msg:string) => {
+export const edit = async (token:string, userUuid:string, postId:number, msg:string): Promise<void> => {
   const data = {
       message: msg
     };
@@ -31,7 +30,7 @@ export const edit = async (token:string, userUuid:string, postId:number, msg:str
 }
 
 //選択ポストを削除するAPI
-export const del = async (userUuid: string, token: string, postId: number) => {
+export const del = async (userUuid: string, token: string, postId: number): Promise<void> => {
   const url = `${apiBaseUrl}/post?userUuid=${userUuid}&token=${token}&postId=${postId}`;
   await axios.delete(url);
 }
