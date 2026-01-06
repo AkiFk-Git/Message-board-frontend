@@ -1,5 +1,5 @@
-import SignInLayout from "../components/SignInLayout";
+import SignInForm from "../components/SignInForm";
 
 export default function SignIn () {
-    return <SignInLayout />
+    return <SignInForm />
 }
