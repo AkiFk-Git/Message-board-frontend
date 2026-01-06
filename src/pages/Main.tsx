@@ -1,8 +1,8 @@
 import { useContext } from 'react';
 import { Navigate } from "react-router-dom";
-import Layout from "../components/Layout";
 import { PostListProvider } from "../providers/PostListProvider"; 
 import { UserContext } from "../providers/UserProvider";
+import MainLayout from '../components/MainLayout';
 
 export default function Main() {
 
@@ -11,7 +11,7 @@ export default function Main() {
 
     return(
       <PostListProvider>
-        {loggedIn ? <Layout />:<Navigate replace to="/" />}
+        {loggedIn ? <MainLayout />:<Navigate replace to="/" />}
       </PostListProvider>
     )
 }
