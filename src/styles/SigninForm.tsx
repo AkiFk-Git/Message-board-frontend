@@ -10,13 +10,11 @@ export const SSignInFrame = styled.div`
 `;
 
 export const SSignInRow = styled.div`
-  display: inline-block;
   margin-top: 4px;
   margin-bottom: 4px;
 `;
 
 export const SSignInLabel = styled.span`
-  display: inline-block;
   width: 25%;
   vertical-align: top;
   text-align: right;

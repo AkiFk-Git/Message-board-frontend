@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 export const SSignUpFrame = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: #f8f8f8;
   margin: 80px;
   padding-top: 8px;
@@ -9,17 +12,21 @@ export const SSignUpFrame = styled.div`
   box-shadow: 0 8px 8px #aaaaaa;
 `;
 
+export const SSignUpInputFrame = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+`;
+
 export const SSignUpRow = styled.div`
-  display: inline-block;
   margin-top: 4px;
   margin-bottom: 4px;
 `;
 
 export const SSignUpLabel = styled.span`
-  display: inline-block;
   width: 25%;
   vertical-align: top;
-  text-align: right;
+  text-align: left;
   margin-right: 4px;
 `;
 
@@ -29,6 +36,7 @@ export const SSignUpInput = styled.span`
   vertical-align: top;
   margin-left: 4px;
 `;
+
 export const SLoginButton = styled.button`
   background-color: #444444;
   color: #f0f0f0;

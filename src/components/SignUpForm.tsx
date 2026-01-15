@@ -6,6 +6,7 @@ import { signUp } from '../api/User';
 import {
   SSignUpFrame,
   SSignUpInput,
+  SSignUpInputFrame,
   SSignUpLabel,
   SSignUpRow,
   SToSignIn,
@@ -40,45 +41,47 @@ export const SignUpForm = () => {
 
   return (
     <SSignUpFrame>
-      <SSignUpRow>
-        <SSignUpLabel>
-          <label htmlFor='id'>ユーザー名</label>
-        </SSignUpLabel>
-        <SSignUpInput>
-          <input
-            id='id'
-            value={userName}
-            type='text'
-            onChange={(evt) => setUserName(evt.target.value)}
-          />
-        </SSignUpInput>
-      </SSignUpRow>
-      <SSignUpRow>
-        <SSignUpLabel>
-          <label htmlFor='password'>パスワード</label>
-        </SSignUpLabel>
-        <SSignUpInput>
-          <input
-            id='password'
-            value={pass}
-            type='password'
-            onChange={(evt) => setPass(evt.target.value)}
-          />
-        </SSignUpInput>
-      </SSignUpRow>
-      <SSignUpRow>
-        <SSignUpLabel>
-          <label htmlFor='mail'>メールアドレス</label>
-        </SSignUpLabel>
-        <SSignUpInput>
-          <input
-            id='mail'
-            value={mail}
-            type='text'
-            onChange={(evt) => setMail(evt.target.value)}
-          />
-        </SSignUpInput>
-      </SSignUpRow>
+      <SSignUpInputFrame>
+        <SSignUpRow>
+          <SSignUpLabel>
+            <label htmlFor='id'>ユーザー名</label>
+          </SSignUpLabel>
+          <SSignUpInput>
+            <input
+              id='id'
+              value={userName}
+              type='text'
+              onChange={(evt) => setUserName(evt.target.value)}
+            />
+          </SSignUpInput>
+        </SSignUpRow>
+        <SSignUpRow>
+          <SSignUpLabel>
+            <label htmlFor='password'>パスワード</label>
+          </SSignUpLabel>
+          <SSignUpInput>
+            <input
+              id='password'
+              value={pass}
+              type='password'
+              onChange={(evt) => setPass(evt.target.value)}
+            />
+          </SSignUpInput>
+        </SSignUpRow>
+        <SSignUpRow>
+          <SSignUpLabel>
+            <label htmlFor='mail'>メールアドレス</label>
+          </SSignUpLabel>
+          <SSignUpInput>
+            <input
+              id='mail'
+              value={mail}
+              type='text'
+              onChange={(evt) => setMail(evt.target.value)}
+            />
+          </SSignUpInput>
+        </SSignUpRow>
+      </SSignUpInputFrame>
       <SSignUpRow>
         <SLoginButton type='button' onClick={onSignUpClick}>
           アカウント作成
