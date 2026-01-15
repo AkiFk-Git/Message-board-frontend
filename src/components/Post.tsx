@@ -44,11 +44,12 @@ export default function Post(props: PostProps) {
   //編集完了ボタンの関数
   const ediFnBtn = async () => {
     setEdit(false);
-    editPost(token, userUuid, post.id, msg);
+    await editPost(token, userUuid, post.id, msg);
+    return;
   };
   //削除ボタンの関数
   const delButton = async () => {
-    delPost(userUuid, token, post.id);
+    await delPost(userUuid, token, post.id);
   };
 
   //ユーザーのuuidが一致していたら削除、編集ボタンを表示
