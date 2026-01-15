@@ -12,7 +12,7 @@ type UserInfo = {
   token: string;
 };
 
-// PoviderのPropsを型定義
+// ProviderのPropsを型定義
 interface UserProviderProps {
   children: ReactNode;
 }

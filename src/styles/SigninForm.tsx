@@ -10,7 +10,7 @@ export const SSignInFrame = styled.div`
 `;
 
 export const SSignInRow = styled.div`
-  dixplay: inline-block;
+  display: inline-block;
   margin-top: 4px;
   margin-bottom: 4px;
 `;

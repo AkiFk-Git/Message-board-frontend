@@ -14,7 +14,7 @@ export const SLogo = styled.div`
   padding-top: 8px;
   padding-bottom: 8px;
   text-align: center;
-  justyify-content: start;
+  justify-content: start;
 `;
 export const SRightItem = styled.div`
   width: 100%;

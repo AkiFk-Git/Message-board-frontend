@@ -7,7 +7,7 @@ import {
 } from 'react';
 import { PostType } from '../types/Types';
 
-// PoviderのPropsを型定義
+// ProviderのPropsを型定義
 interface UserProviderProps {
   children: ReactNode;
 }
