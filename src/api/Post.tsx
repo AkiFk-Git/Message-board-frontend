@@ -21,7 +21,7 @@ export const post = async (
     message: msg,
   };
   const url = `${apiBaseUrl}/post?userUuid=${userUuid}&token=${token}`;
-  await axios.post(url, data);
+  return await axios.post(url, data);
 };
 
 //選択ポストの編集をするAPI
