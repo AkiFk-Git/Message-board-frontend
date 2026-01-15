@@ -4,8 +4,8 @@ import { PostListContext } from '../providers/PostListProvider';
 import { post, getList } from '../api/Post';
 import { getUser } from '../api/User';
 import { PostType } from '../types/Types';
-import { SSideBar } from '../styles/MainLayout';
 import {
+  SSideBar,
   SSideBarButton,
   SSideBarRow,
   SUmail,
