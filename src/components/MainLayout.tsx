@@ -5,9 +5,7 @@ export default function MainLayout() {
   return (
     <>
       <SBody>
-        <SSideBar>
-          <SideBar />
-        </SSideBar>
+        <SideBar />
         <SContents>
           <PostList />
         </SContents>

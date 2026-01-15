@@ -2,6 +2,9 @@ import styled from 'styled-components';
 
 export const SSideBar = styled.div`
   padding: 8px;
+  border-right: 1px solid #222222;
+  width: 20vw;
+  height: 100%;
 `;
 export const SUserInfo = styled.div`
   margin-top: 12px;
