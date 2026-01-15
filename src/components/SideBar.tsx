@@ -49,7 +49,6 @@ export default function SideBar() {
   //送信ボタンの関数
   const onSendClick = async () => {
     if (msg) {
-      alert(`uuid:${userInfo.userUuid},token:${userInfo.token},`);
       await post(userInfo.userUuid, userInfo.token, msg);
       await getPostList();
       setMsg('');

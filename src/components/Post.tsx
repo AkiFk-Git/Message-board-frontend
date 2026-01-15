@@ -4,6 +4,7 @@ import dayjs from 'dayjs';
 
 import { PostProps } from '../types/Types';
 import {
+  SName,
   Sbtn,
   SDate,
   SEdfinBtn,
@@ -11,7 +12,6 @@ import {
   SPost,
   SSideBarTextArea,
 } from '../styles/Post';
-import { SName } from '../styles/Header';
 
 export default function Post(props: PostProps) {
   const { token, post, userUuid, delPost, editPost } = props;

@@ -8,12 +8,12 @@ export const SPost = styled.div`
 `;
 
 export const SName = styled.span`
-  font-size: small;
+  font-size: medium;
   color: #000044;
 `;
 
 export const SDate = styled.span`
-  margin-left: 8px;
+  margin-left: 20px;
   font-size: small;
   color: #000044;
 `;
