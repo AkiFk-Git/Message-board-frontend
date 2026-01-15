@@ -49,9 +49,10 @@ export default function SideBar() {
   //送信ボタンの関数
   const onSendClick = async () => {
     if (msg) {
-      await post(userInfo.userUuid, userInfo.token, msg);
-      await getPostList();
+      const postMsg = msg;
       setMsg('');
+      await post(userInfo.userUuid, userInfo.token, postMsg);
+      await getPostList();
     }
   };
 

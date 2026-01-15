@@ -15,10 +15,10 @@ export const getList = async (token: string): Promise<Array<PostType>> => {
 export const post = async (
   userUuid: string,
   token: string,
-  msg: string
+  postMsg: string
 ): Promise<void> => {
   const data = {
-    message: msg,
+    message: postMsg,
   };
   const url = `${apiBaseUrl}/post?userUuid=${userUuid}&token=${token}`;
   return await axios.post(url, data);
