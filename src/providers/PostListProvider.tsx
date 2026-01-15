@@ -1,5 +1,11 @@
-import { useState, createContext, Dispatch, SetStateAction, ReactNode } from "react";
-import { PostType } from "../types/Types";
+import {
+  useState,
+  createContext,
+  Dispatch,
+  SetStateAction,
+  ReactNode,
+} from 'react';
+import { PostType } from '../types/Types';
 
 // PoviderのPropsを型定義
 interface UserProviderProps {
@@ -9,9 +15,9 @@ interface UserProviderProps {
 //　PostListContextの定義
 export const PostListContext = createContext(
   {} as {
-    postList: PostType[]; 
+    postList: PostType[];
     setPostList: Dispatch<SetStateAction<PostType[]>>;
-  },
+  }
 );
 //　PostListProviderの定義
 export const PostListProvider = (props: UserProviderProps) => {

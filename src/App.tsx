@@ -1,11 +1,10 @@
 import './App.css';
 import AppLayout from './pages/AppLayout';
 
-
 function App() {
   return (
-    <div className="App">
-      <AppLayout/>
+    <div className='App'>
+      <AppLayout />
     </div>
   );
 }

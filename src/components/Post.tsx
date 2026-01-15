@@ -3,58 +3,64 @@ import { ReactNode } from 'react';
 import dayjs from 'dayjs';
 
 import { PostProps } from '../types/Types';
-import { Sbtn, SDate, SEdfinBtn, SEditArea, SPost, SSideBarTextArea } from '../styles/Post';
+import {
+  Sbtn,
+  SDate,
+  SEdfinBtn,
+  SEditArea,
+  SPost,
+  SSideBarTextArea,
+} from '../styles/Post';
 import { SName } from '../styles/Header';
-
 
 export default function Post(props: PostProps) {
   const { token, post, userUuid, delPost, editPost } = props;
-  
+
   //ポストの形を作る
   const getDateStr = () => {
     return dayjs(post.createdAt).format('YYYY年M月D日 H時m分s秒');
   };
-  const getLines = (src: string):ReactNode => {
+  const getLines = (src: string): ReactNode => {
     return src.split('\n').map((line, index) => {
       return (
         <React.Fragment key={index}>
           {line}
           <br />
         </React.Fragment>
-      )
+      );
     });
-  }
+  };
 
   //編集状態の監視
-  const [edit, setEdit] = useState(false)
+  const [edit, setEdit] = useState(false);
   //編集欄の監視
-  const [msg, setMsg] = useState("");
-  
-  //編集開始ボタンの関数 
-  const ediStBtn = async() => {
-    setMsg(post.content)
+  const [msg, setMsg] = useState('');
+
+  //編集開始ボタンの関数
+  const ediStBtn = async () => {
+    setMsg(post.content);
     setEdit(true);
-  }
+  };
   //編集完了ボタンの関数
-  const ediFnBtn = async() => {
+  const ediFnBtn = async () => {
     setEdit(false);
-    editPost(token,userUuid,post.id,msg)
-  }
+    editPost(token, userUuid, post.id, msg);
+  };
   //削除ボタンの関数
-  const delButton = async() => {
-    delPost(userUuid,token,post.id);
-  }
+  const delButton = async () => {
+    delPost(userUuid, token, post.id);
+  };
 
   //ユーザーのuuidが一致していたら削除、編集ボタンを表示
-  return(
+  return (
     <SPost>
       <div>
         <SName>{post.userName}</SName>
         <SDate>{getDateStr()}</SDate>
-        {userUuid === post.userUuid&& !edit && (
+        {userUuid === post.userUuid && !edit && (
           <>
-          <Sbtn onClick={ediStBtn}>編集</Sbtn>
-          <Sbtn onClick={delButton}>削除</Sbtn>
+            <Sbtn onClick={ediStBtn}>編集</Sbtn>
+            <Sbtn onClick={delButton}>削除</Sbtn>
           </>
         )}
       </div>
@@ -64,12 +70,12 @@ export default function Post(props: PostProps) {
             rows={4}
             value={msg}
             onChange={(evt) => setMsg(evt.target.value)}
-            ></SSideBarTextArea>
+          ></SSideBarTextArea>
           <SEdfinBtn onClick={ediFnBtn}>編集完了</SEdfinBtn>
         </SEditArea>
       ) : (
         <div>{getLines(post.content)}</div>
       )}
     </SPost>
-  )
+  );
 }

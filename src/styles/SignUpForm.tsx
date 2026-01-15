@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const SSignUpFrame = styled.div`
   background-color: #f8f8f8;
@@ -38,7 +38,7 @@ export const SLoginButton = styled.button`
 
 export const SToSignIn = styled.a`
   color: #242323ff;
-  font-size: .8rem;
+  font-size: 0.8rem;
   cursor: pointer;
-  text-decoration:underline;
-`
+  text-decoration: underline;
+`;
